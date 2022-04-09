@@ -60,15 +60,15 @@ public class CodeGenerator {
         mpg.setGlobalConfig(gc);
 // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.101.210.219:3306/chat_room_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia" +
+        dsc.setUrl("jdbc:mysql://47.101.210.219:3306/ocdb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia" +
                 "/Shanghai");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUsername("chat_room_db");
-        dsc.setPassword("xy8kRWAXAse4CKxJ");
+        dsc.setUsername("root123");
+        dsc.setPassword("root123");
         mpg.setDataSource(dsc);
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.netty")
+        pc.setParent("com.qiaoan_science")
                 .setEntity("pojo")
                 .setMapper("mapper")
                 .setService("service")
@@ -81,7 +81,7 @@ public class CodeGenerator {
             public void initMap() {
 // to do nothing
                 Map<String, Object> map = new HashMap<>();
-                map.put("netty_chatroom", "1.0.0");
+                map.put("qiaoan_develop", "1.0.0");
                 this.setMap(map);
             }
         };
@@ -125,7 +125,7 @@ public class CodeGenerator {
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
 //表前缀
-        strategy.setTablePrefix("t_");
+        strategy.setTablePrefix("qa_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();

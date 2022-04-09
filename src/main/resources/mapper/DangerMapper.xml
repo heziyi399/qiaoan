@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiaoan_science.mapper.DangerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qiaoan_science.pojo.Danger">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="happen_time" property="happenTime" />
+        <result column="danger_grade" property="dangerGrade" />
+        <result column="brige_id" property="brigeId" />
+        <result column="danger_url" property="dangerUrl" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, happen_time, danger_grade, brige_id, danger_url
+    </sql>
+
+</mapper>

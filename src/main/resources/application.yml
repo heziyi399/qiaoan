@@ -19,3 +19,14 @@ mybatis-plus:
       logic-delete-value: 0
 server:
   port: 8887
+
+#swagger:
+#  enabled: true
+#  title: 桥安科技
+#  version: 1.0.0
+#  description: web page
+#  base-package: 基础路径(*重要*)
+#  #作者
+#  contact:
+#    name: Az
+#    email: azt0903@163.com

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiaoan_science.mapper.BrigeInformationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qiaoan_science.pojo.BrigeInformation">
+        <id column="id" property="id" />
+        <result column="location" property="location" />
+        <result column="company" property="company" />
+        <result column="threeD_file" property="threedFile" />
+        <result column="possible_danger" property="possibleDanger" />
+        <result column="suggestion" property="suggestion" />
+        <result column="recent_detect" property="recentDetect" />
+        <result column="city" property="city" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, location, company, threeD_file, possible_danger, suggestion, recent_detect, city
+    </sql>
+
+</mapper>
