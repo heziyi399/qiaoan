@@ -2,6 +2,9 @@ package com.qiaoan_science.service;
 
 import com.qiaoan_science.pojo.BrigeInformation;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.qiaoan_science.vo.BrigeInforVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBrigeInformationService extends IService<BrigeInformation> {
 
+    List<BrigeInformation> getByCondition(BrigeInforVo brigeInforVo);
 }

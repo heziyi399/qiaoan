@@ -10,6 +10,7 @@ import com.qiaoan_science.config.operation.AbstractClass.Uploader;
 
 import com.qiaoan_science.config.operation.AbstractClass.Deleter;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
@@ -17,7 +18,7 @@ import javax.annotation.Resource;
  * @author hzy
  * @date 2022-04-10
  */
-
+//@Component
 @Data
 public class MyUFOFactory {
     private String storageType;
@@ -39,20 +40,20 @@ public class MyUFOFactory {
     }
 
 
-    public Downloader getDownloader(int storageType) {
+    public Downloader getDownloader() {
 
         return new HeziyiAliyunOSSDownloader();
 
     }
 
 
-    public Deleter getDeleter(int storageType) {
+    public Deleter getDeleter() {
 
         return new HeziyiAliyunOSSDeleter();
 
     }
 
-    public Renamer getRenamer(int storageType) {
+    public Renamer getRenamer() {
 
         return new HeziyiAliyunOSSRenamer();
 

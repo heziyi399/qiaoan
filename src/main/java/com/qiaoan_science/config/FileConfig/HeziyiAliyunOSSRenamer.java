@@ -7,6 +7,8 @@ import com.aliyun.oss.model.ObjectMetadata;
 
 import com.qiaoan_science.config.operation.AbstractClass.Renamer;
 import com.qiaoan_science.config.operation.doamin.RenameFile;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -18,8 +20,9 @@ import javax.annotation.Resource;
 @Component
 
 public class HeziyiAliyunOSSRenamer extends Renamer {
-    @Resource
-    UFOProperties ufoProperties;
+    @Autowired
+    @Qualifier("myUFOProperties")
+    MyUFOProperties ufoProperties;
 
     @Override
     public void rename(RenameFile renameFile) {

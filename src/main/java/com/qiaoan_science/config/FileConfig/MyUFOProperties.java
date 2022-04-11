@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 @ConfigurationProperties(prefix = "ufo")
-public class UFOProperties {
+public class MyUFOProperties {
 
     private String storageType;
     private String localStoragePath;

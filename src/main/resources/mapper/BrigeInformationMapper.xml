@@ -19,4 +19,25 @@
         id, location, company, threeD_file, possible_danger, suggestion, recent_detect, city
     </sql>
 
+    <select id="selectByCondition" parameterType="com.qiaoan_science.vo.BrigeInforVo"  resultType="com.qiaoan_science.pojo.BrigeInformation">
+select * from qa_brige_information
+where 1 = 1
+<if test="location!=null">
+and location = #{location}
+
+</if>
+<if test="company!=null">
+and company =#{company}
+</if>
+<if test="possibleDanger !=null">
+and possible_danger = #{possibleDanger}
+</if>
+<if test="beginDate !=null and endDate != null">
+    and recent_detect between #{beginDate} and #{endDate}
+</if>
+<if test="city !=null">
+    and city = #{city}
+</if>
+    </select>
+
 </mapper>

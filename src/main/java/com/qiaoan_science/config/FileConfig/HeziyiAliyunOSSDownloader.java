@@ -67,7 +67,8 @@ public class HeziyiAliyunOSSDownloader extends Downloader {
     public OSS createOSSClient(AliyunOSS aliyunOSS) {
         String endpoint = "https://oss-cn-beijing.aliyuncs.com";
         String accessKeyId = "LTAI5tKVCV8sHmKJEJcswyxE";
-        String accessKeySecret = "eRZuJGJlt0wtoopfFCBBM7jCyjI80c";
+        //String accessKeySecret = "eRZuJGJlt0wtoopfFCBBM7jCyjI80c";
+        String accessKeySecret = "myname";
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
         return ossClient;
     }

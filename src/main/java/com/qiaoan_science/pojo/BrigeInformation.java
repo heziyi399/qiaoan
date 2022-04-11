@@ -1,8 +1,13 @@
 package com.qiaoan_science.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -24,6 +29,7 @@ public class BrigeInformation implements Serializable {
     /**
      * 桥梁id
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
@@ -55,7 +61,8 @@ public class BrigeInformation implements Serializable {
     /**
      * 最近一次检测的时间
      */
-    private String recentDetect;
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+    private Date recentDetect;
 
     /**
      * 桥梁所在城市
