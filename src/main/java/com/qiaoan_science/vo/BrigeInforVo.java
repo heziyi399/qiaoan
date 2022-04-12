@@ -55,4 +55,6 @@ public class BrigeInforVo implements Serializable {
      */
     @ApiModelProperty(name = "city", value = "桥梁所在城市", dataType = "String")
     private String city;
+    @ApiModelProperty(name = "dangerGrade", value = "桥梁风险等级", dataType = "int")
+    private int dangerGrade;
 }

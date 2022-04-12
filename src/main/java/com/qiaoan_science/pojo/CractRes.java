@@ -47,7 +47,7 @@ public class CractRes implements Serializable {
     /**
      * 裂缝检测深度
      */
-    private String crackDeepth;
+    private Double crackDeepth;
 
     /**
      * 含检测结果的图片url

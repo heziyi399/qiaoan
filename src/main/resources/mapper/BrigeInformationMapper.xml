@@ -12,11 +12,12 @@
         <result column="suggestion" property="suggestion" />
         <result column="recent_detect" property="recentDetect" />
         <result column="city" property="city" />
+        <result column="danger_grade" property="dangerGrade"></result>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, location, company, threeD_file, possible_danger, suggestion, recent_detect, city
+        id, location, company, threeD_file, possible_danger, suggestion, recent_detect, city,danger_grade
     </sql>
 
     <select id="selectByCondition" parameterType="com.qiaoan_science.vo.BrigeInforVo"  resultType="com.qiaoan_science.pojo.BrigeInformation">
