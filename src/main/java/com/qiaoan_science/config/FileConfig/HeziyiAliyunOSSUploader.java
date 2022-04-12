@@ -14,6 +14,7 @@ import com.qiaoan_science.util.PathUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
@@ -29,6 +30,8 @@ import java.util.*;
 @Component
 @Slf4j
 public class HeziyiAliyunOSSUploader extends Uploader {
+    @Autowired
+    private HeziyiAliyunOSSDownloader downloader;
     // partETags是PartETag的集合。PartETag由分片的ETag和分片号组成。
     public static Map<String, List<PartETag>> partETagsMap = new HashMap<String, List<PartETag>>();
     public static Map<String, UploadFileInfo> uploadPartRequestMap = new HashMap<>();
@@ -180,8 +183,8 @@ public class HeziyiAliyunOSSUploader extends Uploader {
     private synchronized OSS getClient(UploadFile uploadFile) {
         OSS ossClient = null;
         if (ossMap.get(uploadFile.getIdentifier()) == null) {
-            ossClient = new OSSClientBuilder().build("https://oss-cn-beijing.aliyuncs.com", "LTAI5tKVCV8sHmKJEJcswyxE",
-                   "eRZuJGJlt0wtoopfFCBBM7jCyjI80c");
+            ossClient = new OSSClientBuilder().build(downloader.endpoint, downloader.accessKeyId,
+                   downloader.accessKeySecret);
             ossMap.put(uploadFile.getIdentifier(), ossClient);
         } else {
             ossClient = ossMap.get(uploadFile.getIdentifier());
