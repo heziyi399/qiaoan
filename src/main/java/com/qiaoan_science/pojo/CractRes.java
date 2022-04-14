@@ -68,6 +68,6 @@ public class CractRes implements Serializable {
      * 病害等级
      */
     private String dangerGrade;
-
+private String crackFrom;//检测来源
 
 }

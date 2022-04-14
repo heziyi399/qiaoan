@@ -10,14 +10,12 @@ import com.qiaoan_science.vo.BrigeInforVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.Getter;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -31,11 +29,11 @@ import java.util.List;
  */
 @Api(tags = {"桥梁信息接口"})
 @RestController
-@RequestMapping
+@RequestMapping("/brige_information")
 public class BrigeInformationController {
     @Autowired
     private BrigeInformationServiceImpl informationsService;
-    @PostMapping("/list/brige_information")
+    @GetMapping("/list")
     @ApiOperation(value="分页获取全部数据")
     public ResponseResult<PageInfo> brigeInforlists(
             @ApiParam(name="pageNum",value="开头页",required=true)@RequestParam("pageNum")int pageNum,

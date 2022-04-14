@@ -10,11 +10,34 @@
         <result column="danger_grade" property="dangerGrade" />
         <result column="brige_id" property="brigeId" />
         <result column="danger_url" property="dangerUrl" />
+        <result column="danger_rate" property="dangerRate" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, happen_time, danger_grade, brige_id, danger_url
+        id, name, happen_time, danger_grade, brige_id, danger_url,danger_rate
     </sql>
+    <select id="selectByCondition" parameterType="com.qiaoan_science.vo.DangerInforVo"
+            resultType="com.qiaoan_science.pojo.Danger">
+        select * from qa_danger
+        <if test="brigeName !=null">
+            join  qa_brige_information brige on
+            and brige.name = #{dangerName}
+        </if>
+        where 1 = 1
+        <if test="name!=null">
+            and name = #{name}
+
+        </if>
+
+
+        <if test="beginDate !=null and endDate != null">
+            and detect_date between #{beginDate} and #{endDate}
+        </if>
+        <if test="dangerGrade !=null">
+            and danger_grade = #{dangerGrade}
+        </if>
+
+    </select>
 
 </mapper>

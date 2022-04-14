@@ -13,6 +13,7 @@ import com.qiaoan_science.util.FileUtil;
 import com.qiaoan_science.util.PathUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import okhttp3.*;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,7 @@ import org.springframework.web.multipart.support.StandardMultipartHttpServletReq
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -191,9 +193,26 @@ public class HeziyiAliyunOSSUploader extends Uploader {
         }
         return ossClient;
     }
-
+public void get() throws IOException {
+   String api =  "hDO92JGwoXICHP7YX2PJvRaB1A7y0G";
+    OkHttpClient client = new OkHttpClient().newBuilder()
+            .build();
+    MediaType mediaType = MediaType.parse("text/plain");
+    RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+            .addFormDataPart("img","/C:/Users/heziyi6/Pictures/src=http___imglf6.nosdn0.126.net_img_KzR3bGJQRmR0K2ZDTDlKNkhkcWRZQUEwNDA1RHVDTFVnYmozek5hL0p4Z3VBRklnYUhjNHBRPT0.jpg_imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg&refer=http___imglf6.nosdn0.126.jpg",
+                    RequestBody.create(MediaType.parse("application/octet-stream"),
+                            new File("/C:/Users/heziyi6/Pictures/src=http___imglf6.nosdn0.126.net_img_KzR3bGJQRmR0K2ZDTDlKNkhkcWRZQUEwNDA1RHVDTFVnYmozek5hL0p4Z3VBRklnYUhjNHBRPT0.jpg_imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg&refer=http___imglf6.nosdn0.126.jpg")))
+            .build();
+    Request request = new Request.Builder()
+            .url("http://img.codesocean.top/upload/img")
+            .method("POST", body)
+            .addHeader("apikey", "hDO92JGwoXICHP7YX2PJvRaB1A7y0G")
+            .build();
+    Response response = client.newCall(request).execute();
+}
     @Data
     public class UploadFileInfo {
+
         private String bucketName;
         private String key;
         private String uploadId;

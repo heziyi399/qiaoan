@@ -50,6 +50,7 @@ public class Danger implements Serializable {
     private Integer brigeId;
 
     private String dangerUrl;
-
+    //此病害在这个桥上的所占比重
+private double dangerRate;
 
 }

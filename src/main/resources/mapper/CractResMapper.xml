@@ -13,11 +13,13 @@
         <result column="detect_date" property="detectDate" />
         <result column="company" property="company" />
         <result column="danger_grade" property="dangerGrade" />
+        <result column="crack_from" property="crackFrom" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, brige_name, brige_location, crack_width, crack_deepth, pic, detect_date, company, danger_grade
+        id, brige_name, brige_location, crack_width, crack_deepth,
+pic, detect_date, company, danger_grade,crack_from
     </sql>
 
 </mapper>

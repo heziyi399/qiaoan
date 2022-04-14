@@ -27,7 +27,8 @@ public class BrigeInforVo implements Serializable {
      * 桥梁位置
      */
     private String location;
-
+    @ApiModelProperty(name = "name", value = "桥梁名", dataType = "String")
+    private String name;
     /**
      * 桥梁所属单位
      */
@@ -48,7 +49,7 @@ public class BrigeInforVo implements Serializable {
      */
     @ApiModelProperty(name = "beginDate", value = "检测时间开始值", dataType = "Date")
     private Date beginDate;
-    @ApiModelProperty(name = "beginDate", value = "检测时间结束", dataType = "Date")
+    @ApiModelProperty(name = "endDate", value = "检测时间结束值", dataType = "Date")
     private Date endDate;
     /**
      * 桥梁所在城市

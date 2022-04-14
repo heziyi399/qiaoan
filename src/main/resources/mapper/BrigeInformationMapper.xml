@@ -13,6 +13,7 @@
         <result column="recent_detect" property="recentDetect" />
         <result column="city" property="city" />
         <result column="danger_grade" property="dangerGrade"></result>
+        <result column="name" property="name" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
@@ -39,6 +40,10 @@ and possible_danger = #{possibleDanger}
 <if test="city !=null">
     and city = #{city}
 </if>
+        <if test="name !=null">
+            and name = #{name}
+        </if>
+
     </select>
 
 </mapper>

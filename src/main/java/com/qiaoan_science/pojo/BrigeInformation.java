@@ -70,4 +70,5 @@ public class BrigeInformation implements Serializable {
     private String city;
 
 private int dangerGrade;//风险等级
+    private String name;
 }
