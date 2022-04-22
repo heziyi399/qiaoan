@@ -3,18 +3,19 @@ package com.qiaoan_science.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.qiaoan_science.Base.ResponseResult;
+import com.qiaoan_science.pojo.BrigeInformation;
 import com.qiaoan_science.pojo.CractRes;
 import com.qiaoan_science.pojo.Danger;
 import com.qiaoan_science.service.impl.CractResServiceImpl;
+import com.qiaoan_science.vo.BrigeInforVo;
+import com.qiaoan_science.vo.CractVo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -45,4 +46,18 @@ public class CractResController {
 
     return ResponseResult.success(pageInfo);
 }
+
+    @ApiOperation(value="条件查询数据")
+    @PostMapping("/list/cractbycondition")
+    public ResponseResult selectBrigeInfor(CractVo cractVo)
+    {
+        BrigeInformation information = new BrigeInformation();
+        List<CractRes>briges = cractService.getByCondition(cractVo);
+        PageInfo pageInfo = new PageInfo(briges);
+        pageInfo.setList(briges);
+        pageInfo.setPageSize(10);
+        pageInfo.setPageNum(1);
+
+        return ResponseResult.success(pageInfo);
+    }
 }

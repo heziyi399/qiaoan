@@ -39,7 +39,8 @@ public class BrigeInformationController {
             @ApiParam(name="pageNum",value="开头页",required=true)@RequestParam("pageNum")int pageNum,
             @ApiParam(name="pageSize",value="页的大小",required=true)@RequestParam("content")int pageSize
 
-    ){
+    )
+    {
 List<BrigeInformation> briges = informationsService.list();
 
         PageInfo pageInfo = new PageInfo(briges);

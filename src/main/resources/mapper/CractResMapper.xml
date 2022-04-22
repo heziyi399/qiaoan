@@ -21,5 +21,35 @@
         id, brige_name, brige_location, crack_width, crack_deepth,
 pic, detect_date, company, danger_grade,crack_from
     </sql>
+    <select id="getByCondition" parameterType="com.qiaoan_science.vo.CractVo"
+            resultType="com.qiaoan_science.pojo.CractRes">
+        select * from qa_cract_res
+        where 1 = 1
+
+          <if test="brigeName != null">
+            and brige_name = #{brigeName}
+
+        </if>
+        <if test="brigeLocation!=null">
+            and brige_location =#{brigeLocation}
+        </if>
+
+        <if test="beginDate !=null and endDate != null">
+            and recent_detect between #{beginDate} and #{endDate}
+        </if>
+        <if test="company !=null">
+            and company = #{company}
+        </if>
+
+        <if test="dangerGrade !=null">
+            and danger_grade = #{dangerGrade}
+        </if>
+
+        <if test="crackFrom !=null">
+            and crack_from = #{crackFrom}
+        </if>
+
+
+    </select>
 
 </mapper>

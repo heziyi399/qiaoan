@@ -4,7 +4,11 @@ import com.qiaoan_science.pojo.CractRes;
 import com.qiaoan_science.mapper.CractResMapper;
 import com.qiaoan_science.service.ICractResService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.qiaoan_science.vo.CractVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +20,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CractResServiceImpl extends ServiceImpl<CractResMapper, CractRes> implements ICractResService {
-
+@Autowired
+private CractResMapper mapper;
+    @Override
+    public List<CractRes> getByCondition(CractVo cractVo) {
+        return mapper.getByCondition(cractVo);
+    }
 }

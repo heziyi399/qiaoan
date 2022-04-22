@@ -1,7 +1,11 @@
 package com.qiaoan_science.service;
 
+import com.qiaoan_science.pojo.BrigeInformation;
 import com.qiaoan_science.pojo.CractRes;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.qiaoan_science.vo.CractVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +17,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICractResService extends IService<CractRes> {
 
+    List<CractRes> getByCondition(CractVo cractVo);
 }
