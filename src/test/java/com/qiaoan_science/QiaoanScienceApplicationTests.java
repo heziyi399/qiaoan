@@ -13,8 +13,7 @@ import java.io.IOException;
 
 @SpringBootTest
 class QiaoanScienceApplicationTests {
-@Autowired
-private HeziyiAliyunOSSDownloader download;
+
     @Test
     void contextLoads() throws IOException {
         OkHttpClient client = new OkHttpClient().newBuilder()

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiaoan_science.mapper.CityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qiaoan_science.pojo.City">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="bridge_num" property="bridgeNum" />
+        <result column="brige_danger_num" property="brigeDangerNum" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, bridge_num, brige_danger_num
+    </sql>
+
+</mapper>

@@ -193,6 +193,7 @@ public class HeziyiAliyunOSSUploader extends Uploader {
         }
         return ossClient;
     }
+
 public void get() throws IOException {
    String api =  "hDO92JGwoXICHP7YX2PJvRaB1A7y0G";
     OkHttpClient client = new OkHttpClient().newBuilder()

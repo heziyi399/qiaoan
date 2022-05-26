@@ -35,7 +35,7 @@ public class CractResController {
     private CractResServiceImpl cractService;
 @GetMapping("/list")
     public ResponseResult<PageInfo> geturl(    @ApiParam(name="pageNum",value="开头页",required=true)@RequestParam("pageNum")int pageNum,
-                                               @ApiParam(name="pageSize",value="页的大小",required=true)@RequestParam("content")int pageSize)
+                                               @ApiParam(name="pageSize",value="页的大小",required=true)@RequestParam("pageSize")int pageSize)
 {
     List<CractRes> cracts = cractService.list();
 

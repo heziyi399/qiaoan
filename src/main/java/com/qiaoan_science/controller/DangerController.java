@@ -36,7 +36,7 @@ public class DangerController {
 @ApiOperation(value="分页获取全部数据")
 public ResponseResult<PageInfo> brigeInforlists(
         @ApiParam(name="pageNum",value="开头页",required=true)@RequestParam("pageNum")int pageNum,
-        @ApiParam(name="pageSize",value="页的大小",required=true)@RequestParam("content")int pageSize
+        @ApiParam(name="pageSize",value="页的大小",required=true)@RequestParam("pageSize")int pageSize
 
 ){
     List<Danger> dangers = service.list();
