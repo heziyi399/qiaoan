@@ -14,6 +14,7 @@
         <result column="company" property="company" />
         <result column="danger_grade" property="dangerGrade" />
         <result column="crack_from" property="crackFrom" />
+        <result column="initial_pic" property="initialPic" />
     </resultMap>
 
     <!-- 通用查询结果列 -->

@@ -33,6 +33,7 @@ import java.util.List;
 public class CractResController {
     @Autowired
     private CractResServiceImpl cractService;
+    @ApiOperation(value="裂缝列表")
 @GetMapping("/list")
     public ResponseResult<PageInfo> geturl(    @ApiParam(name="pageNum",value="开头页",required=true)@RequestParam("pageNum")int pageNum,
                                                @ApiParam(name="pageSize",value="页的大小",required=true)@RequestParam("pageSize")int pageSize)

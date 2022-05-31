@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author hzy
@@ -53,7 +53,7 @@ public class CractRes implements Serializable {
      * 含检测结果的图片url
      */
     private String pic;
-
+    private String initialPic;
     /**
      * 检测时间
      */

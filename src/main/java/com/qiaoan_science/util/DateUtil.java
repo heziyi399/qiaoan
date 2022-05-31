@@ -1,5 +1,7 @@
 package com.qiaoan_science.util;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -124,5 +126,10 @@ public class DateUtil {
 //    public static void main(String[] args) {
 //        System.out.println(RandomUtil.randomInt(6));
 //    }
+public static final String datePath()
+{
+    Date now = new Date();
+    return DateFormatUtils.format(now, "yyyy/MM/dd");
+}
 
 }
